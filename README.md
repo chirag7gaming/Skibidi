@@ -1,7 +1,5 @@
 ## Skibidi Coding Language (SCL) & Skibidi Terminal Language (STL)
 
-```markdown
-# 🚽 Skibidi Coding Language (SCL) & Skibidi Terminal Language (STL)
 
 <div align="center">
 
@@ -624,4 +622,3 @@ I built Skibidi because someone had to.
 "Harder than Bash and Brainfuck combined."
 
 </div>
-```
