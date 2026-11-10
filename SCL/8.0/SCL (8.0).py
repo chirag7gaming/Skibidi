@@ -1,5 +1,5 @@
 """
-Skibidi v7.0 - The Uninvited Edition (June 2026) - FULL PORT with GYATT
+Skibidi v8.0 - Must've been the Wind Edition (November 2026) - FULL PORT with LARP
 """
 
 import math
@@ -10,912 +10,10 @@ import struct
 import sys
 import threading
 import time
-import os
+import tkinter as tk
 import shutil
-import importlib
 from dataclasses import dataclass, field
-from typing import List, Optional, Dict, Any, Tuple
-
-import sys, os, io, re, json, csv, xml, html, urllib, http, ftplib, smtplib
-import time, datetime, calendar, zoneinfo
-import math, cmath, random, statistics, fractions, decimal
-import itertools, functools, collections, heapq, bisect, array
-import threading, multiprocessing, queue, asyncio, concurrent
-import socket, socketserver, ssl, hashlib, hmac, secrets
-import subprocess, shutil, tempfile, pathlib, glob, fnmatch
-import argparse, logging, warnings, traceback, pdb
-import base64, binascii, zlib, gzip, bz2, lzma, zipfile, tarfile
-import pickle, shelve, dbm, sqlite3
-import tkinter, turtle, curses
-import PIL, cv2
-import numpy
-import scipy
-import pandas
-import matplotlib
-import tensorflow
-import torch
-import keras
-import transformers
-import django
-import flask
-import fastapi
-import requests
-import aiohttp
-import selenium
-import beautifulsoup4
-import lxml
-import scrapy
-import pytest
-import unittest
-import doctest
-import cryptography
-import jwt
-import oauthlib
-import boto3
-import botocore
-import s3transfer
-import aiobotocore
-import google
-import azure
-import rich
-import colorama
-import termcolor
-import yaml
-import toml
-import configparser
-import markdown
-import docx
-import pdfplumber
-import openpyxl
-import telebot
-import discord
-import slack_sdk
-import redis
-import pymongo
-import psycopg2
-import mysql
-import rabbitmq
-import kafka
-import docker
-import kubernetes
-import prometheus_client
-import sentry_sdk
-import graphviz
-import networkx
-import plotly
-import sklearn
-import statsmodels
-import nltk
-import spacy
-import pytest
-import mock
-import factoryboy
-import celery
-import webbrowser
-import pyautogui
-import keyboard
-import mouse
-import playsound
-import pyaudio
-import scapy
-import impacket
-import cryptography
-import pycryptodome
-import paramiko
-import fabric
-import ansible
-import salt
-import airflow
-import dagster
-import ray
-import dask
-import cupy
-import numba
-import jax
-import flax
-import polars
-import duckdb
-import streamlit
-import gradio
-import tox
-import black
-import flake8
-import pylint
-import mypy
-import setuptools
-import wheel
-import pip
-import jupyter
-import notebook
-import ipython
-import huggingface_hub
-import datasets
-import evaluate
-import langchain
-import langchain_core
-import llama_index
-import openai
-import anthropic
-import cohere
-import fasttext
-import gensim
-import flask_sqlalchemy
-import flask_login
-import flask_socketio
-import django_rest_framework
-import django_cors_headers
-import scrapy_selenium
-import scrapy_splash
-import celery_redis
-import celery_beat
-import prometheus_async
-import grafana_api
-import elasticsearch
-import logstash
-import kibana
-import kafka_python
-import confluent_kafka
-import redis_cluster
-import redis_sentinel
-import mongodb_mock
-import mysql_mock
-import postgres_mock
-import sqlite_mock
-import docker_compose
-import k8s_client
-import aws_cli
-import azure_cli
-import gcloud
-import terraform
-import pulumi
-import airflow_providers
-import dagster_aws
-import ray_serve
-import dask_kubernetes
-import cupy_cuda
-import numba_cuda
-import jaxlib
-import flax_nn
-import polars_lazy
-import duckdb_engine
-import gradio_client
-import streamlit_webrtc
-import pytest_asyncio
-import pytest_cov
-import black_jupyter
-import flake8_jupyter
-import mypy_extensions
-import typing_extensions
-import numpy_groupies
-import numpy_stl
-import scipy_optimize
-import scipy_signal
-import pandas_ta
-import pandas_datareader
-import matplotlib_venn
-import matplotlib_animation
-import seaborn_objects
-import plotly_express
-import bokeh
-import holoviews
-import datashader
-import altair
-import vega_datasets
-import pygraphviz
-import pydot
-import graph_tool
-import community
-import leidenalg
-import igraph
-import networkx_algorithm
-import networkx_generators
-import sklearn_ensemble
-import sklearn_linear_model
-import sklearn_neural_network
-import sklearn_svm
-import sklearn_cluster
-import sklearn_decomposition
-import sklearn_manifold
-import sklearn_metrics
-import sklearn_model_selection
-import sklearn_pipeline
-import statsmodels_tsa
-import statsmodels_api
-import statsmodels_formula
-import statsmodels_graphics
-import nltk_corpus
-import nltk_tokenize
-import nltk_tag
-import nltk_chunk
-import nltk_parse
-import spacy_lang
-import spacy_transformers
-import spacy_llm
-import textblob
-import polyglot
-import langdetect
-import googletrans
-import deep_translator
-import translate
-import pyttsx3
-import gtts
-import speech_recognition
-import whisper
-import voice_recognition
-import vosk
-import face_recognition
-import dlib
-import mediapipe
-import yolov5
-import ultralytics
-import detectron2
-import pytesseract
-import easyocr
-import ocrmypdf
-import moviepy
-import ffmpeg
-import librosa
-import audioread
-import pydub
-import midiutil
-import mido
-import pretty_midi
-import music21
-import mingus
-import pyo
-import pygame_midi
-import pygame_mixer
-import arcade
-import pyglet
-import cocos2d
-import ursina
-import panda3d
-import directx
-import moderngl
-import pyopengl
-import pyvulkan
-import pycuda
-import pyopencl
-import sympy
-import sage
-import mpmath
-import z3
-import cvc5
-import pycosat
-import qiskit
-import cirq
-import pennylane
-import braket
-import gym
-import stable_baselines3
-import rl_zoo
-import pettingzoo
-import magent
-import ray_rllib
-import unity_mlagents
-import ml_agents
-import transformers_onnx
-import optimum
-import onnxruntime
-import tflite
-import tvm
-import mlir
-import triton
-import torch_compile
-import torch_indctor
-import tinygrad
-import mlx
-import coremltools
-import mojo
-import python_jit
-import numba_ml
-import taichi
-import warp
-import cudf
-import dask_cudf
-import rapids
-import cuml
-import cugraph
-import cuspatial
-import cuxfilter
-import blazingsql
-import nosql
-import cassandra
-import scylla
-import cockroachdb
-import tidb
-import clickhouse
-import influxdb
-import timescaledb
-import neo4j
-import arangodb
-import orientdb
-import qdrant
-import milvus
-import weaviate
-import pinecone
-import chromadb
-import faiss
-import annoy
-import nmslib
-import hnswlib
-import scann
-import pgvector
-import redisearch
-import redismod
-import valkey
-import mongodb_aggregation
-import mongodb_atlas
-import postgis
-import spatialite
-import geopandas
-import shapely
-import fiona
-import rasterio
-import folium
-import mapbox
-import keplergl
-import deckgl
-import osmnx
-import networkx_osm
-import overpy
-import geopy
-import geocoder
-import reverse_geocode
-import timezonefinder
-import pytzwhere
-import weather_api
-import meteostat
-import noaa
-import pyowm
-import darksky
-import openweather
-import stock_api
-import yfinance
-import alpha_vantage
-import polygon
-import ccxt
-import binance
-import coinbase
-import kraken
-import web3
-import eth_account
-import solana
-import near_api
-import bitcoinlib
-import bit
-import pycoin
-import ta_lib
-import backtrader
-import zipline
-import quantopian
-import freqtrade
-import hummingbot
-import gekko
-import binance_futures
-import bybit
-import ftx
-import okx
-import kucoin
-import gateio
-import huobi
-import bitmart
-import telegram_send
-import twilio
-import nexmo
-import slack_sdk
-import discord_webhook
-import teams
-import zoom_api
-import meet_api
-import webex_api
-import calendar_api
-import outlook_api
-import gmail_api
-import dropbox
-import google_drive
-import onedrive
-import boto3_s3
-import google_cloud_storage
-import azure_storage
-import minio
-import ceph
-import seaweedfs
-import hdfs
-import pyarrow
-import parquet
-import avro
-import orc
-import fastparquet
-import pyorc
-import feather
-import iceberg
-import delta
-import hudi
-import paimon
-import trino
-import presto
-import hive
-import spark
-import pyspark
-import pyspark_sql
-import pyspark_ml
-import koalas
-import pyspark_pandas
-import dask_dataframe
-import dask_array
-import dask_bag
-import vaex
-import modin
-import cuDF
-import fugue
-import ibis
-import substrait
-import datafusion
-import ballista
-import arrow
-import polars_cloud
-import polars_arrow
-import duckdb_parquet
-import duckdb_arrow
-import sqlalchemy
-import sqlmodel
-import peewee
-import pony
-import tortoise
-import gino
-import asyncpg
-import sqlalchemy_async
-import databases
-import encode
-import psycopg2_pool
-import pg8000
-import asyncpg_pool
-import mysql_connector
-import pymysql_pool
-import aiomysql
-import sqlite3_pool
-import aiosqlite
-import sqlcipher
-import snowflake
-import redshift
-import bigquery
-import athena
-import trino_python
-import presto_python
-import clickhouse_driver
-import clickhouse_connect
-import influxdb_client
-import influxdb_async
-import timescaledb_async
-import timescaledb_pool
-import redis_cluster
-import redis_sentinel
-import redis_async
-import valkey_py
-import dragonfly
-import keydb
-import mongodb_motor
-import mongodb_async
-import cassandra_driver
-import cassandra_async
-import scylla_driver
-import scylla_async
-import cockroachdb_async
-import tidb_async
-import neo4j_async
-import arangodb_async
-import qdrant_client
-import milvus_async
-import weaviate_async
-import chromadb_async
-import pinecone_grpc
-import pytest_async
-import pytest_timeout
-import hypothesis
-import property_based
-import afl
-import fuzz
-import pyfuzzer
-import bandit
-import safety
-import vuln_scanner
-import mypy_strict
-import pyright
-import basedpyright
-import ruff
-import autoflake
-import isort
-import reorder_python_imports
-import pyupgrade
-import flynt
-import pycln
-import pre_commit
-import cz_cli
-import semantic_release
-import poetry
-import pdm
-import rye
-import uv
-import pixi
-import hatchling
-import flit
-import pbr
-import twine
-import build
-import installer
-import wheel_packager
-import pyinstaller
-import nuitka
-import cx_freeze
-import py2exe
-import py2app
-import briefcase
-import shiv
-import pex
-import zipapps
-import docker_py
-import podman
-import containerd
-import openshift
-import rancher
-import nomad
-import consul
-import vault
-import terraform_sdk
-import pulumi_sdk
-import cdk8s
-import crossplane
-import klotho
-import wing
-import aws_cdk
-import aws_sam
-import aws_cloudformation
-import google_deployment_manager
-import azure_arm
-import kubernetes_asyncio
-import kubernetes_client
-import helm_sdk
-import kustomize
-import kpt
-import argocd
-import flux_cd
-import tekton
-import jenkins
-import gitlab_ci
-import github_actions
-import circleci
-import travis_ci
-import azure_pipelines
-import bamboo
-import teamcity
-import go_cd
-import airflow_dags
-import dagster_jobs
-import prefect_flows
-import kedro
-import mage
-import orchestra
-import mlflow
-import weights_biases
-import neptune
-import comet_ml
-import optuna
-import hyperopt
-import skopt
-import nevergrad
-import ray_tune
-import tune_sklearn
-import optuna_integration
-import shap
-import lime
-import eli5
-import captum
-import interpret
-import alibi
-import dice_ml
-import counterfit
-import fairness_indicators
-import aequitas
-import what_if
-import tensorflow_model_analysis
-import tensorflow_data_validation
-import pytorch_lightning
-import lightning
-import ignite
-import catalyst
-import accelerate
-import deepspeed
-import colossalai
-import fairscale
-import horovod
-import mpi4py
-import torch_distributed
-import tf_distributed
-import jax_distributed
-import onnx
-import tf2onnx
-import onnx2torch
-import tvm_compiler
-import mlir_python
-import xla
-import torch_xla
-import torch_mlir
-import torch_tensorrt
-import tensorrt
-import openvino
-import tflite_runtime
-import coral_api
-import edge_tpu
-import tensorflow_lite
-import mediapipe_tasks
-import vision_edge
-import jetson_inference
-import jetson_utils
-import trt_pose
-import depthai
-import oak_d
-import realsense
-import openni
-import pykinect
-import lidar_sdk
-import radar_sdk
-import imu_sdk
-import gpsd
-import rtk
-import nmea
-import serial
-import pyserial_asyncio
-import bluepy
-import bleak
-import hidapi
-import pyusb
-import pyftdi
-import can
-import j1939
-import obd
-import python_obd
-import ros_comm
-import ros_control
-import ros_bridge
-import ros2_py
-import rclpy
-import ament
-import mavsdk
-import pymavlink
-import dronekit
-import ardupilot
-import px4
-import betaflight
-import dynamixel
-import pca9685
-import adafruit
-import gpiozero
-import rpi_gpio
-import jetson_gpio
-import pigpio
-import wiringpi
-import lgpio
-import spi_dev
-import i2c_dev
-import mcp3008
-import bme280
-import dht22
-import ds18b20
-import hx711
-import camera_pi
-import camera_jetcam
-import picamera2
-import opencv_cuda
-import opencv_contrib
-import opencv_highgui
-import imutils
-import scikit_image
-import simplecv
-import pillow_avif
-import pillow_heif
-import pillow_jxl
-import imageio
-import scipy_ndimage
-import skimage_io
-import pydicom
-import nibabel
-import medpy
-import monai
-import medical_image
-import brain_processor
-import cellpose
-import stardist
-import napari
-import qupath
-import bioimageio
-import cellprofiler
-import imagelab
-import cytoolz
-import toolz
-import fn
-import funcy
-import more_itertools
-import bidict
-import boltons
-import attrs
-import pydantic
-import pydantic_core
-import pydantic_settings
-import msgspec
-import pyserde
-import frozendict
-import immutables
-import pyrsistent
-import multipledispatch
-import singledispatch
-import functools_singledispatch
-import decorator
-import wrapt
-import wrapy
-import contextvars
-import contextlib2
-import async_lru
-import aiocache
-import cachetools
-import diskcache
-import pylru
-import lru_dictionary
-import joblib
-import cloudpickle
-import dill
-import marshal
-import lz4
-import snappy
-import brotli
-import zstandard
-import cython
-import mypyc
-import cffi
-import ctypes
-import pybind11
-import boost_python
-import grpc
-import grpc_tools
-import grpcio_status
-import grpcio_tools
-import protobuf
-import capnproto
-import flatbuffers
-import avro_binary
-import msgpack
-import cbor2
-import tomlkit
-import yaml_c
-import ron
-import hocon
-import jsonschema
-import jsonref
-import jsonpath_ng
-import jmespath
-import xmltodict
-import dicttoxml
-import pickleshare
-import pprint
-import rich_pretty
-import prettytable
-import tabulate
-import texttable
-import asciitable
-import colorlog
-import loguru
-import structlog
-import eliot
-import sentry_logging
-import datadog_logging
-import honeycomb
-import prometheus_logging
-import open_telemetry
-import opentelemetry_api
-import opentelemetry_sdk
-import opentelemetry_semantic_conventions
-import opentelemetry_proto
-import opentelemetry_exporter_otlp
-import jaeger
-import zipkin
-import lightstep
-import newrelic
-import appdynamics
-import dynatrace
-import datadog_trace
-import aws_xray
-import azure_monitor
-import sentry_tracing
-import rollbar_tracing
-import bugsnag
-import ray_tracing
-import zipkin_py
-import opentelemetry_auto
-import fastapi_tracing
-import django_tracing
-import flask_tracing
-import tensorflow_probability
-import torch_distributions
-import jax_probability
-import pymc
-import arviz
-import bambi
-import causalnex
-import pgmpy
-import bnlearn
-import causal_forest
-import econml
-import dowhy
-import causal_inference
-import diff_priv
-import pyvacy
-import tensorflow_privacy
-import opacus
-import pytorch_dp
-import jax_dp
-import sklearn_dp
-import numpy_random_dp
-import faker
-import mimesis
-import synthetic_data
-import sdv
-import ctgan
-import tvae
-import ydata_synthetic
-import gretel_sdk
-import mostly_ai
-import generated
-import anonymization
-import pseudonymization
-import deidentification
-import fhir
-import hl7
-import dicom_standard
-import snomed_ct
-import icd10
-import rxnorm
-import healthcare_ai
-import clinical_trials
-import biopython
-import pydna
-import sequencing
-import genomics
-import variant_calling
-import vcf_parser
-import bam_reader
-import sam_reader
-import cram_reader
-import fq_reader
-import fasta_parser
-import gff_parser
-import bioconda
-import conda
-import mamba
-import micromamba
-import sglang
-import litellm
-import mcp
-import textual
-import llama_cpp_python
-import gguf
-import pytokens
-import smolagents
-import agno
-import ag2
-import dspy
-import instructor
-import mlx_lm
-import vibevoice
-import voxcpm
-import autoresearch
-import graphify
-import autokernel
-import waza
-import cribl_control_plane
-import czi_client_sdk
-import library_nudt_mcp
-import typing_inspection
-import annotated_types
+from typing import List, Optional, Dict, Any
 
 ALL_EMOJIS = [
     '😀', '😃', '😄', '😁', '😆', '😅', '😂', '🤣', '😊', '😇', '🙂', '🙃', '😉', '😌', '😍', '🥰', '😘', '😗', '😙', '😚',
@@ -982,8 +80,6 @@ class PlayerProfile:
     rage_quit_timer: int = 0
     packet_loss: int = 0
     latency_ms: int = 0
-
-import tkinter as tk
 
 @dataclass
 class Vector3:
@@ -1167,7 +263,7 @@ class Native3D:
             self.window.destroy()
 
 @dataclass
-class Skibidi7:
+class Skibidi8:
     memory: List[Complex] = field(default_factory=lambda: [Complex() for _ in range(MEMORY_SIZE)])
     pointer: int = 0
     pitch: int = 440
@@ -1213,7 +309,7 @@ def hash_to_pitch(state: bytearray) -> int:
     val = (state[0] << 24) | (state[1] << 16) | (state[2] << 8) | state[3]
     return 200 + (abs(val) % 600)
 
-def skibidi_chaos(s: Skibidi7):
+def skibidi_chaos(s: Skibidi8):
     md5_update(s.rng_state)
     s.pitch = hash_to_pitch(s.rng_state)
 
@@ -1224,7 +320,7 @@ def sigma_checksum(data: bytes) -> int:
         checksum ^= 0x69696969
     return checksum
 
-def sigma_net_init(s: Skibidi7):
+def sigma_net_init(s: Skibidi8):
     s.sigma_net = SigmaNet()
     s.sigma_net.connected = 0
     s.sigma_net.peer_count = 0
@@ -1235,7 +331,7 @@ def sigma_net_init(s: Skibidi7):
     s.profile.packet_loss = 0
     s.profile.latency_ms = 0
 
-def sigma_connect(s: Skibidi7, server_ip: str, port: int) -> bool:
+def sigma_connect(s: Skibidi8, server_ip: str, port: int) -> bool:
     s.sigma_net.socket_fd = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.sigma_net.socket_fd.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
     s.sigma_net.addr = (server_ip, port)
@@ -1247,39 +343,39 @@ def sigma_connect(s: Skibidi7, server_ip: str, port: int) -> bool:
     print(f"Connected to {server_ip}:{port} as '{s.profile.player_name}'")
     return True
 
-def sigma_broadcast_memory(s: Skibidi7, index: int):
+def sigma_broadcast_memory(s: Skibidi8, index: int):
     if not s.sigma_net.connected:
         return
     if random.randint(0, 99) < s.profile.packet_loss:
         return
 
-def sigma_broadcast_action(s: Skibidi7, action: str):
+def sigma_broadcast_action(s: Skibidi8, action: str):
     if not s.sigma_net.connected:
         return
 
-def sigma_rage_quit_check(s: Skibidi7):
+def sigma_rage_quit_check(s: Skibidi8):
     if s.profile.skill_level <= 0:
         print("\nRAGE QUIT")
         sys.exit(1)
 
-def sigma_flex(s: Skibidi7, skill_level: int):
+def sigma_flex(s: Skibidi8, skill_level: int):
     flex_lines = ["packet loss", "skill issue", "lag spike", "buffering", "disconnected"]
     flex_msg = f"{s.profile.player_name}: {flex_lines[random.randint(0, 4)]} (skill: {skill_level})"
     print(f"FLEX: {flex_msg}")
 
-def sigma_peer_discovery(s: Skibidi7) -> bool:
+def sigma_peer_discovery(s: Skibidi8) -> bool:
     if not s.sigma_net.connected:
         return False
     print("Searching for peers...")
     return True
 
-def sigma_receive_thread(s: Skibidi7):
+def sigma_receive_thread(s: Skibidi8):
     pass
 
-def sigma_send_thread(s: Skibidi7):
+def sigma_send_thread(s: Skibidi8):
     pass
 
-def brainrot(s: Skibidi7):
+def brainrot(s: Skibidi8):
     if s.program_size <= 1:
         return
     for i in range(s.program_size // 2):
@@ -1290,7 +386,7 @@ def brainrot(s: Skibidi7):
     s.ip = 0
     s.debug = 0 if s.debug else 1
 
-def gooner(s: Skibidi7):
+def gooner(s: Skibidi8):
     if s.gooner_activated:
         return
     if s.diddy_gooner_inside:
@@ -1332,7 +428,7 @@ def gooner(s: Skibidi7):
     s.gooner_activated = 1
     s.ip = 0
 
-def epstein_execute_inside(s: Skibidi7, outer_op: str, inner_op: str):
+def epstein_execute_inside(s: Skibidi8, outer_op: str, inner_op: str):
     if s.nested_depth >= 16:
         print("Epstein nested too deep!")
         return
@@ -1341,21 +437,14 @@ def epstein_execute_inside(s: Skibidi7, outer_op: str, inner_op: str):
     s.nested_depth += 1
     s.in_epstein = 1
     s.epstein_target_op = inner_op
-    print(f"[Epstein] Running '{inner_op}' inside '{outer_op}' (isolated)")
-    old_ip = s.ip
-    old_in_epstein = s.in_epstein
-    s.in_epstein = 2
-    if inner_op in s.program:
-        print(f"[Epstein Inside] Isolated execution: {inner_op}")
-    s.in_epstein = old_in_epstein
-    s.ip = old_ip
+    execute(s, inner_op)
     s.nested_depth -= 1
     s.nested_ops.pop()
     s.nested_ip.pop()
     s.in_epstein = 1 if s.nested_depth > 0 else 0
     s.epstein_target_op = None
 
-def load_program(s: Skibidi7, filename: str) -> bool:
+def load_program(s: Skibidi8, filename: str) -> bool:
     try:
         with open(filename, 'r') as fp:
             content = fp.read()
@@ -1363,31 +452,73 @@ def load_program(s: Skibidi7, filename: str) -> bool:
         return False
     tokens = []
     for line in content.split('\n'):
-        if ';' in line:
-            line = line[:line.index(';')]
-        for token in line.split():
-            clean = token.strip()
-            if clean.endswith(':'):
+        if line.lstrip().startswith(';'):
+            continue
+        for clean in tokenize_program_line(line):
+            if clean == ';':
+                tokens.append(';')
+            elif clean.endswith(':') and clean not in VALID_OPS:
                 label = clean[:-1]
                 s.label_map[label] = len(tokens)
                 s.label_count += 1
-            elif clean in VALID_OPS:
+            else:
                 tokens.append(clean)
-            elif clean.startswith('"') and clean.endswith('"'):
-                tokens.append(clean)
-            elif clean:
-                print(f"Unknown op: {clean}", file=sys.stderr)
-                return False
     s.program = tokens
     s.program_size = len(tokens)
     return True
 
-def print_debug(s: Skibidi7, op: str):
+def print_debug(s: Skibidi8, op: str):
     mag = s.memory[s.pointer].magnitude()
     print(f"[{s.ip}] {op:<20} | P:{s.pitch:3d}Hz | C:{s.pointer:2d} | "
           f"({s.memory[s.pointer].real:.1f}+{s.memory[s.pointer].imag:.1f}i) | "
           f"Mag:{mag:.0f} | Swp:{s.swapped} | Spoil:{s.spoiled} | "
           f"Rot:{s.brainrot_count % 2} | Goon:{s.gooner_activated} | Eps:{s.in_epstein}")
+
+MULTI_WORD_OPS = sorted(
+    ['magical white liquid', 'the dude who no one invited:', 'dude call', 'triple t', 'im out'],
+    key=lambda x: len(x.split()), reverse=True
+)
+
+def tokenize_program_line(line):
+    raw = []
+    i, n = 0, len(line)
+    while i < n:
+        while i < n and line[i].isspace():
+            i += 1
+        if i >= n:
+            break
+        if line[i] == ';':
+            raw.append(';')
+            i += 1
+            continue
+        if line[i] == '"':
+            j = i + 1
+            while j < n and line[j] != '"':
+                j += 1
+            if j < n:
+                j += 1
+            raw.append(line[i:j])
+            i = j
+            continue
+        j = i
+        while j < n and not line[j].isspace() and line[j] != ';':
+            j += 1
+        raw.append(line[i:j])
+        i = j
+    out, i = [], 0
+    while i < len(raw):
+        matched = False
+        for mw in MULTI_WORD_OPS:
+            parts = mw.split()
+            if i + len(parts) <= len(raw) and raw[i:i+len(parts)] == parts:
+                out.append(mw)
+                i += len(parts)
+                matched = True
+                break
+        if not matched:
+            out.append(raw[i])
+            i += 1
+    return out
 
 VALID_OPS = {
     'dop', 'bop', 'skibidi', 'grimace', 'toilet', 'rizz', 'sigma', 'ohio',
@@ -1396,14 +527,22 @@ VALID_OPS = {
     'bred', 'dawg', 'triple t', 'patrick', '3d', 'cross', 'dot', 'let', 'get',
     'the dude who no one invited:', 'dude call',
     'kink', 'tiki', 'ip', 'acey', 'speed', 'cristiano', 'messi',
-    '3don', '3doff', 'cube', 'sphere', 'cam', 'clear3d'
+    '3don', '3doff', 'cube', 'sphere', 'cam', 'clear3d',
+    'Larp', 'larp',
 }
 
-def execute(s: Skibidi7, op: str):
+def execute(s: Skibidi8, op: str):
     if s.debug:
         print_debug(s, op)
     s.undefined_behavior = 1 if (s.swapped and s.spoiled) else 0
     if op == "magical white liquid":
+        return
+    if op == "Larp":
+        for i in range(s.program_size):
+            if s.program[i] in ('gooner', 'cristiano', 'speed', 'dawg', 'dih', 'brainrot'):
+                s.program[i] = "larp"
+        return
+    if op == "larp":
         return
     if op == "epstein":
         next_ip = s.ip + 1
@@ -1492,7 +631,10 @@ def execute(s: Skibidi7, op: str):
     if op == "the dude who no one invited:":
         module_spec = ""
         temp_ip = s.ip + 1
-        while temp_ip < s.program_size and s.program[temp_ip] != ";" and s.program[temp_ip] != "then":
+        while (temp_ip < s.program_size
+               and s.program[temp_ip] != ";"
+               and s.program[temp_ip] != "then"
+               and s.program[temp_ip] not in VALID_OPS):
             module_spec += s.program[temp_ip] + " "
             temp_ip += 1
         module_spec = module_spec.strip()
@@ -1518,13 +660,15 @@ def execute(s: Skibidi7, op: str):
             func_name = '.'.join(parts[1:])
             args = []
             temp_ip = s.ip + 2
-            while temp_ip < s.program_size and s.program[temp_ip] != ";":
+            while (temp_ip < s.program_size
+                   and s.program[temp_ip] != ";"
+                   and s.program[temp_ip] not in VALID_OPS):
                 try:
                     args.append(int(s.program[temp_ip]))
                 except ValueError:
                     try:
                         args.append(float(s.program[temp_ip]))
-                    except:
+                    except ValueError:
                         args.append(s.program[temp_ip])
                 temp_ip += 1
             try:
@@ -1579,15 +723,15 @@ def execute(s: Skibidi7, op: str):
         next_ip = s.ip + 1
         found_gooner_inside = False
         custom_text = None
+        end_ip = next_ip
         if next_ip < s.program_size and s.program[next_ip] == "gooner":
             found_gooner_inside = True
-            s.ip = next_ip
-            text_ip = s.ip + 1
-            if text_ip < s.program_size and s.program[text_ip].startswith('"'):
-                msg = s.program[text_ip]
+            end_ip = next_ip + 1
+            if end_ip < s.program_size and s.program[end_ip].startswith('"'):
+                msg = s.program[end_ip]
                 if len(msg) >= 2 and msg[0] == '"' and msg[-1] == '"':
                     custom_text = msg[1:-1]
-                s.ip = text_ip
+                end_ip += 1
         if found_gooner_inside:
             if s.spoiled or s.undefined_behavior:
                 print("\nCRASH", file=sys.stderr)
@@ -1598,6 +742,8 @@ def execute(s: Skibidi7, op: str):
             s.diddy_gooner_inside = 1
             s.gooner_custom_text = custom_text
             gooner(s)
+            if s.ip < end_ip - 1:
+                s.ip = end_ip - 1
         else:
             if s.spoiled or s.undefined_behavior:
                 print("\nCRASH", file=sys.stderr)
@@ -1710,9 +856,6 @@ Capiche boy? 🍷🗿"""
 
     if s.gooner_activated:
         return
-    current = s.memory[s.pointer]
-    if s.swapped and not s.undefined_behavior:
-        current = current.swap()
     if op == "dop":
         if s.spoiled and not s.undefined_behavior:
             s.memory[s.pointer].real -= 1.0
@@ -1806,7 +949,7 @@ Capiche boy? 🍷🗿"""
         elif s.debug:
             print(" | GYATT fail (stack empty)")
 
-def run(s: Skibidi7):
+def run(s: Skibidi8):
     s.ip = 0
     while s.ip < s.program_size:
         execute(s, s.program[s.ip])
@@ -1816,7 +959,7 @@ def run(s: Skibidi7):
 
 def create_demo(fname: str):
     with open(fname, 'w') as fp:
-        fp.write("; Skibidi v7.0 Demo\n")
+        fp.write("; Skibidi v8.0 Demo\n")
         fp.write("dop " * 65 + "rizz\n")
         fp.write("grimace\n")
         fp.write("epstein rizz\n")
@@ -1841,7 +984,7 @@ def main():
     filename = None
     server_ip = None
     server_port = 42069
-    s = Skibidi7()
+    s = Skibidi8()
     sigma_net_init(s)
     args = sys.argv[1:]
     i = 0
@@ -1882,12 +1025,14 @@ def main():
         sigma_peer_discovery(s)
         time.sleep(1)
     if not filename:
-        print("Skibidi v7.0 - The Uninvited Edition (June 2026)")
+        print("Skibidi v8.0 - The Uninvited Edition (June 2026)")
         print("Commands: dop, bop, skibidi, grimace, toilet, rizz, sigma, ohio")
         print("          67, mango, diddy, brainrot, gooner, sigmaflex, epstein, gyatt")
         print("          dih, vah, twin, im out, bred, dawg, triple t, patrick")
         print("          3d, cross, dot, let, get, the dude who no one invited:, dude call")
-        print("\nNEW: gyatt - checks stack top, jumps if magnitude > threshold (100/50)")
+        print("          Larp - replace gooner/cristiano/speed/dih/brainrot with larp (no-op)")
+        print("          larp - no-op")
+        print("gyatt - checks stack top, jumps if magnitude > threshold (100/50)")
         print("     dih/vah - push/pull file operations")
         print("     the dude who no one invited: - import any Python module")
         print(f"\nUsage: {sys.argv[0]} <file.skb> [--debug]")
@@ -1897,7 +1042,7 @@ def main():
     if not load_program(s, filename):
         print(f"Failed to load: {filename}", file=sys.stderr)
         return 1
-    print("=== Skibidi v7.0 ===")
+    print("=== Skibidi v8.0 ===")
     if server_ip:
         print(f"Multiplayer: connected to {server_ip}:{server_port}")
     else:
